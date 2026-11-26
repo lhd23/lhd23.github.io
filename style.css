@@ -37,3 +37,5 @@ a:focus-visible { outline-offset: 3px; }
   color: #666;
   font-size: 13px;
 }
+
+.publications li + li { margin-block-start: 16px; }
