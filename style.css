@@ -18,6 +18,9 @@ a { color: inherit; }
 a:hover { text-decoration: none; }
 a:focus-visible { outline-offset: 3px; }
 
+.posts a,
+.paper-links a { text-decoration: none; }
+
 .links {
   margin: 0;
   padding: 0;
