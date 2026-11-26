@@ -14,12 +14,9 @@ main {
 
 h1 { font-size: 24px; }
 
-a { color: inherit; }
-a:hover { text-decoration: none; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
 a:focus-visible { outline-offset: 3px; }
-
-.posts a,
-.paper-links a { text-decoration: none; }
 
 .links {
   margin: 0;
@@ -31,7 +28,6 @@ a:focus-visible { outline-offset: 3px; }
 
 .back {
   margin-block-end: 24px;
-  font-size: 13px;
 }
 
 .posts time {
