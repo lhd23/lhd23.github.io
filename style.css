@@ -1,0 +1,39 @@
+body {
+  margin: 7px;
+  color: #333;
+  background: #fff;
+  font: 15px -apple-system, Helvetica, Arial, sans-serif;
+}
+
+main {
+  max-width: 700px;
+  margin: 28px auto;
+}
+
+.landing { margin-block: 119px; }
+
+h1 { font-size: 24px; }
+
+a { color: inherit; }
+a:hover { text-decoration: none; }
+a:focus-visible { outline-offset: 3px; }
+
+.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links li + li { margin-block-start: 5px; }
+
+.back {
+  margin-block-end: 24px;
+  font-size: 13px;
+}
+
+.posts time {
+  display: block;
+  margin-block-start: 4px;
+  color: #666;
+  font-size: 13px;
+}
