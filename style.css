@@ -39,3 +39,8 @@ a:focus-visible { outline-offset: 3px; }
 }
 
 .publications li + li { margin-block-start: 16px; }
+
+.paper-links {
+  margin-block-start: 4px;
+  font-size: 13px;
+}
