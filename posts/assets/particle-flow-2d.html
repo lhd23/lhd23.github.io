@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Particle flow in a two-dimensional universe</title>
+<style>:root{color-scheme:light;background:rgb(255 255 255)}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Particle flow in a two-dimensional universe" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-theme=&quot;light&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Particle flow in a two-dimensional universe&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;lss-particle-flow&quot;&gt;
+  &lt;style&gt;
+    #lss-particle-flow {
+      display: grid;
+      gap: 12px;
+      width: 100%;
+      color: var(--foreground);
+    }
+
+    #lss-particle-flow .lss-stage {
+      position: relative;
+      min-width: 0;
+    }
+
+    #lss-particle-flow canvas {
+      display: block;
+      width: 100%;
+    }
+  &lt;/style&gt;
+
+  &lt;h2&gt;Particle flow in a two-dimensional universe&lt;/h2&gt;
+
+  &lt;div class=&quot;viz-controls&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;lss-seed&quot;&gt;
+      Seed
+      &lt;input class=&quot;form-control&quot; id=&quot;lss-seed&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;4294967295&quot; step=&quot;1&quot; value=&quot;77&quot;&gt;
+    &lt;/label&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;lss-count&quot;&gt;
+      Particles
+      &lt;input class=&quot;form-control&quot; id=&quot;lss-count&quot; type=&quot;number&quot; min=&quot;4&quot; max=&quot;100&quot; step=&quot;1&quot; value=&quot;32&quot;&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;viz-controls&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;lss-time&quot;&gt;
+      &lt;span&gt;Time &lt;var&gt;t&lt;/var&gt;&lt;/span&gt;
+      &lt;output id=&quot;lss-time-value&quot; for=&quot;lss-time&quot;&gt;0.00&lt;/output&gt;
+      &lt;input class=&quot;form-range&quot; id=&quot;lss-time&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;1000&quot; step=&quot;1&quot; value=&quot;0&quot; aria-label=&quot;Time t from 0 to 1&quot;&gt;
+    &lt;/label&gt;
+    &lt;button class=&quot;btn btn-primary&quot; id=&quot;lss-play&quot; type=&quot;button&quot; aria-pressed=&quot;false&quot;&gt;Play&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;lss-stage&quot;&gt;
+    &lt;canvas id=&quot;lss-canvas&quot; role=&quot;img&quot; aria-describedby=&quot;lss-summary&quot;&gt;&lt;/canvas&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;sr-only&quot; id=&quot;lss-summary&quot;&gt;A perspective view of a periodic two-dimensional particle universe. Uniform random initial positions lie on the top plane at time zero, final positions lie on the bottom plane at time one, and curves show each particle trajectory.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&quot;lss-particle-flow&quot;);
+  if (!root || root.dataset.initialized === &quot;true&quot;) return;
+  root.dataset.initialized = &quot;true&quot;;
+
+  const canvas = root.querySelector(&quot;#lss-canvas&quot;);
+  const ctx = canvas.getContext(&quot;2d&quot;);
+  const stage = root.querySelector(&quot;.lss-stage&quot;);
+  const seedInput = root.querySelector(&quot;#lss-seed&quot;);
+  const countInput = root.querySelector(&quot;#lss-count&quot;);
+  const timeInput = root.querySelector(&quot;#lss-time&quot;);
+  const timeValue = root.querySelector(&quot;#lss-time-value&quot;);
+  const playButton = root.querySelector(&quot;#lss-play&quot;);
+  const summary = root.querySelector(&quot;#lss-summary&quot;);
+  const reducedMotion = window.matchMedia(&quot;(prefers-reduced-motion: reduce)&quot;);
+  const colorScheme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+
+  const FRAME_COUNT = 181;
+  const PLAY_DURATION = 9000;
+  let tracks = [];
+  let particleCount = 32;
+  let seed = 77;
+  let time = 0;
+  let playing = false;
+  let animationFrame = 0;
+  let animationOrigin = 0;
+  let width = 736;
+  let height = 580;
+  let colors = {};
+
+  function clamp(value, minimum, maximum) {
+    return Math.max(minimum, Math.min(maximum, value));
+  }
+
+  function wrap(value) {
+    return ((value % 1) + 1) % 1;
+  }
+
+  function mulberry32(initialSeed) {
+    let state = initialSeed &gt;&gt;&gt; 0;
+    return function random() {
+      state |= 0;
+      state = state + 0x6D2B79F5 | 0;
+      let value = Math.imul(state ^ state &gt;&gt;&gt; 15, 1 | state);
+      value = value + Math.imul(value ^ value &gt;&gt;&gt; 7, 61 | value) ^ value;
+      return ((value ^ value &gt;&gt;&gt; 14) &gt;&gt;&gt; 0) / 4294967296;
+    };
+  }
+
+  function mixSeed(simulationSeed, count) {
+    let value = (simulationSeed ^ Math.imul(count, 0x9E3779B1)) &gt;&gt;&gt; 0;
+    value = Math.imul(value ^ value &gt;&gt;&gt; 16, 0x21F0AAAD);
+    value = Math.imul(value ^ value &gt;&gt;&gt; 15, 0x735A2D97);
+    return (value ^ value &gt;&gt;&gt; 15) &gt;&gt;&gt; 0;
+  }
+
+  function gaussian(random) {
+    const first = Math.max(Number.EPSILON, random());
+    const second = random();
+    return Math.sqrt(-2 * Math.log(first)) * Math.cos(2 * Math.PI * second);
+  }
+
+  function coherentVelocities(points, random) {
+    const wavevectors = [
+      [1, 0], [0, 1], [1, 1], [1, -1], [2, 1], [1, 2], [2, -1], [-1, 2]
+    ];
+    const modes = wavevectors.map(([kx, ky]) =&gt; ({
+      kx,
+      ky,
+      phase: 2 * Math.PI * random(),
+      amplitude: gaussian(random) / (kx * kx + ky * ky)
+    }));
+
+    const values = points.map((point) =&gt; {
+      let dx = 0;
+      let dy = 0;
+      for (const mode of modes) {
+        const angle = 2 * Math.PI * (mode.kx * point.x + mode.ky * point.y) + mode.phase;
+        const gradient = -mode.amplitude * Math.sin(angle);
+        dx += mode.kx * gradient;
+        dy += mode.ky * gradient;
+      }
+      dx += 0.08 * gaussian(random);
+      dy += 0.08 * gaussian(random);
+      return { x: dx, y: dy };
+    });
+
+    const maximum = Math.max(...values.map((value) =&gt; Math.hypot(value.x, value.y)), Number.EPSILON);
+    return values.map((value) =&gt; ({ x: value.x / maximum, y: value.y / maximum }));
+  }
+
+  function accelerations(positions, softening, gravity) {
+    const result = positions.map(() =&gt; ({ x: 0, y: 0 }));
+    const mass = 1 / positions.length;
+    for (let i = 0; i &lt; positions.length; i += 1) {
+      for (let j = i + 1; j &lt; positions.length; j += 1) {
+        let dx = positions[j].x - positions[i].x;
+        let dy = positions[j].y - positions[i].y;
+        dx -= Math.round(dx);
+        dy -= Math.round(dy);
+        const inverseRadiusCubed = 1 / Math.pow(dx * dx + dy * dy + softening * softening, 1.5);
+        const factor = gravity * mass * inverseRadiusCubed;
+        const ax = factor * dx;
+        const ay = factor * dy;
+        result[i].x += ax;
+        result[i].y += ay;
+        result[j].x -= ax;
+        result[j].y -= ay;
+      }
+    }
+    return result;
+  }
+
+  function simulate(count, simulationSeed) {
+    const random = mulberry32(mixSeed(simulationSeed, count));
+    let positions = Array.from({ length: count }, () =&gt; ({
+      x: random(),
+      y: random()
+    }));
+    const velocityField = coherentVelocities(positions, random);
+    let velocities = velocityField.map((value) =&gt; ({
+      x: 0.055 * value.x,
+      y: 0.055 * value.y
+    }));
+
+    const snapshots = [positions.map((point) =&gt; ({ ...point }))];
+    const physicalDuration = 2.5;
+    const step = physicalDuration / (FRAME_COUNT - 1);
+    const softening = clamp(0.18 / Math.sqrt(count), 0.018, 0.065);
+    const gravity = 0.085;
+    let force = accelerations(positions, softening, gravity);
+
+    for (let index = 0; index &lt; velocities.length; index += 1) {
+      velocities[index].x += 0.5 * step * force[index].x;
+      velocities[index].y += 0.5 * step * force[index].y;
+    }
+
+    for (let frame = 1; frame &lt; FRAME_COUNT; frame += 1) {
+      positions = positions.map((point, index) =&gt; ({
+        x: wrap(point.x + step * velocities[index].x),
+        y: wrap(point.y + step * velocities[index].y)
+      }));
+      force = accelerations(positions, softening, gravity);
+      for (let index = 0; index &lt; velocities.length; index += 1) {
+        velocities[index].x += step * force[index].x;
+        velocities[index].y += step * force[index].y;
+      }
+      snapshots.push(positions.map((point) =&gt; ({ ...point })));
+    }
+
+    return Array.from({ length: count }, (_, particle) =&gt;
+      snapshots.map((snapshot) =&gt; snapshot[particle])
+    );
+  }
+
+  function resolveColor(variable) {
+    const probe = document.createElement(&quot;span&quot;);
+    probe.style.color = `var(${variable})`;
+    probe.style.position = &quot;absolute&quot;;
+    probe.style.visibility = &quot;hidden&quot;;
+    root.appendChild(probe);
+    const value = getComputedStyle(probe).color;
+    probe.remove();
+    return value;
+  }
+
+  function resolveColors() {
+    colors = {
+      foreground: resolveColor(&quot;--foreground&quot;),
+      muted: resolveColor(&quot;--muted-foreground&quot;),
+      series: resolveColor(&quot;--viz-series-1&quot;)
+    };
+  }
+
+  function geometry() {
+    const xAxis = { x: 0.4 * width, y: 0.071 * width };
+    const yAxis = { x: 0.331 * width, y: -0.233 * width };
+    const topMargin = 16;
+    const bottomMargin = 16;
+    const topOrigin = {
+      x: 0.135 * width,
+      y: topMargin - yAxis.y
+    };
+    const bottomOfTopPlane = topOrigin.y + xAxis.y;
+    return {
+      origin: topOrigin,
+      xAxis,
+      yAxis,
+      timeAxis: { x: 0, y: Math.max(120, height - bottomMargin - bottomOfTopPlane) }
+    };
+  }
+
+  function project(x, y, currentTime, layout) {
+    return {
+      x: layout.origin.x + x * layout.xAxis.x + y * layout.yAxis.x + currentTime * layout.timeAxis.x,
+      y: layout.origin.y + x * layout.xAxis.y + y * layout.yAxis.y + currentTime * layout.timeAxis.y
+    };
+  }
+
+  function drawPlane(currentTime, layout, emphasis = false) {
+    ctx.save();
+    ctx.strokeStyle = emphasis ? colors.series : colors.muted;
+    ctx.lineWidth = emphasis ? 1.1 : 0.8;
+    ctx.globalAlpha = emphasis ? 0.28 : 0.38;
+
+    const divisions = 6;
+    for (let division = 0; division &lt;= divisions; division += 1) {
+      const fraction = division / divisions;
+      const horizontalStart = project(0, fraction, currentTime, layout);
+      const horizontalEnd = project(1, fraction, currentTime, layout);
+      const verticalStart = project(fraction, 0, currentTime, layout);
+      const verticalEnd = project(fraction, 1, currentTime, layout);
+
+      ctx.beginPath();
+      ctx.moveTo(horizontalStart.x, horizontalStart.y);
+      ctx.lineTo(horizontalEnd.x, horizontalEnd.y);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(verticalStart.x, verticalStart.y);
+      ctx.lineTo(verticalEnd.x, verticalEnd.y);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function segmentCrossesBoundary(first, second) {
+    return Math.abs(second.x - first.x) &gt; 0.5 || Math.abs(second.y - first.y) &gt; 0.5;
+  }
+
+  function drawTrack(track, endFrame, layout, strokeStyle, lineWidth, alpha) {
+    const finalWholeFrame = Math.floor(endFrame);
+    const fraction = endFrame - finalWholeFrame;
+    ctx.save();
+    ctx.strokeStyle = strokeStyle;
+    ctx.lineWidth = lineWidth;
+    ctx.globalAlpha = alpha;
+    ctx.lineCap = &quot;round&quot;;
+    ctx.lineJoin = &quot;round&quot;;
+    ctx.beginPath();
+    let active = false;
+
+    for (let frame = 0; frame &lt;= finalWholeFrame &amp;&amp; frame &lt; track.length; frame += 1) {
+      if (frame &gt; 0 &amp;&amp; segmentCrossesBoundary(track[frame - 1], track[frame])) active = false;
+      const point = project(track[frame].x, track[frame].y, frame / (FRAME_COUNT - 1), layout);
+      if (!active) {
+        ctx.moveTo(point.x, point.y);
+        active = true;
+      } else {
+        ctx.lineTo(point.x, point.y);
+      }
+    }
+
+    if (fraction &gt; 0 &amp;&amp; finalWholeFrame &lt; track.length - 1) {
+      const first = track[finalWholeFrame];
+      const second = track[finalWholeFrame + 1];
+      if (!segmentCrossesBoundary(first, second)) {
+        const x = first.x + fraction * (second.x - first.x);
+        const y = first.y + fraction * (second.y - first.y);
+        const point = project(x, y, endFrame / (FRAME_COUNT - 1), layout);
+        ctx.lineTo(point.x, point.y);
+      }
+    }
+
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function currentPosition(track, framePosition) {
+    const firstFrame = Math.min(FRAME_COUNT - 1, Math.floor(framePosition));
+    const secondFrame = Math.min(FRAME_COUNT - 1, firstFrame + 1);
+    const fraction = framePosition - firstFrame;
+    const first = track[firstFrame];
+    const second = track[secondFrame];
+    let dx = second.x - first.x;
+    let dy = second.y - first.y;
+    dx -= Math.round(dx);
+    dy -= Math.round(dy);
+    return {
+      x: wrap(first.x + fraction * dx),
+      y: wrap(first.y + fraction * dy)
+    };
+  }
+
+  function drawDot(point, radius, fill, alpha = 1) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function draw() {
+    if (!tracks.length || !width || !height) return;
+    ctx.clearRect(0, 0, width, height);
+    const layout = geometry();
+    const framePosition = time * (FRAME_COUNT - 1);
+
+    drawPlane(0, layout);
+    drawPlane(1, layout);
+    if (time &gt; 0.015 &amp;&amp; time &lt; 0.985) drawPlane(time, layout, true);
+
+    for (const track of tracks) {
+      drawTrack(track, FRAME_COUNT - 1, layout, colors.muted, 0.75, 0.22);
+    }
+    for (const track of tracks) {
+      drawTrack(track, framePosition, layout, colors.series, 0.8, 0.9);
+    }
+
+    for (const track of tracks) {
+      const initial = project(track[0].x, track[0].y, 0, layout);
+      const final = project(track[FRAME_COUNT - 1].x, track[FRAME_COUNT - 1].y, 1, layout);
+      drawDot(initial, 2.1, colors.foreground, 0.58);
+      drawDot(final, 2.1, colors.foreground, 0.58);
+    }
+
+    const currentParticles = tracks.map((track) =&gt; {
+      const position = currentPosition(track, framePosition);
+      return {
+        position,
+        projected: project(position.x, position.y, time, layout)
+      };
+    }).sort((first, second) =&gt; first.position.y - second.position.y);
+
+    for (const particle of currentParticles) {
+      drawDot(particle.projected, 3.25, colors.series);
+    }
+  }
+
+  function updateTime(nextTime, updateSlider = true) {
+    time = clamp(nextTime, 0, 1);
+    if (updateSlider) timeInput.value = String(Math.round(1000 * time));
+    timeValue.value = time.toFixed(2);
+    playButton.textContent = time &gt;= 1 &amp;&amp; !playing ? &quot;Replay&quot; : (playing ? &quot;Pause&quot; : &quot;Play&quot;);
+    playButton.setAttribute(&quot;aria-pressed&quot;, String(playing));
+    draw();
+  }
+
+  function stopPlayback() {
+    playing = false;
+    cancelAnimationFrame(animationFrame);
+    animationFrame = 0;
+    playButton.setAttribute(&quot;aria-pressed&quot;, &quot;false&quot;);
+    playButton.textContent = time &gt;= 1 ? &quot;Replay&quot; : &quot;Play&quot;;
+  }
+
+  function animationStep(timestamp) {
+    if (!playing) return;
+    const nextTime = (timestamp - animationOrigin) / PLAY_DURATION;
+    if (nextTime &gt;= 1) {
+      playing = false;
+      updateTime(1);
+      return;
+    }
+    updateTime(nextTime);
+    animationFrame = requestAnimationFrame(animationStep);
+  }
+
+  function startPlayback() {
+    if (playing) {
+      stopPlayback();
+      return;
+    }
+    if (time &gt;= 1) updateTime(0);
+    playing = true;
+    animationOrigin = performance.now() - time * PLAY_DURATION;
+    playButton.setAttribute(&quot;aria-pressed&quot;, &quot;true&quot;);
+    playButton.textContent = &quot;Pause&quot;;
+    animationFrame = requestAnimationFrame(animationStep);
+  }
+
+  function resetSimulation(autoplay) {
+    stopPlayback();
+    seed = clamp(Math.trunc(Number(seedInput.value) || 0), 0, 4294967295);
+    particleCount = clamp(Math.trunc(Number(countInput.value) || 32), 4, 100);
+    seedInput.value = String(seed);
+    countInput.value = String(particleCount);
+    tracks = simulate(particleCount, seed);
+    summary.textContent = `${particleCount} seeded particles move through a periodic two-dimensional universe. Uniform random initial positions lie on the top plane at time zero, final positions lie on the bottom plane at time one, and curves show each trajectory.`;
+    updateTime(0);
+    if (autoplay &amp;&amp; !reducedMotion.matches) {
+      window.setTimeout(() =&gt; {
+        if (time === 0 &amp;&amp; !playing) startPlayback();
+      }, 250);
+    }
+  }
+
+  function resize() {
+    const bounds = stage.getBoundingClientRect();
+    width = Math.max(1, Math.round(bounds.width));
+    height = width &lt; 500 ? 500 : Math.min(610, Math.round(width * 0.8));
+    const ratio = Math.min(2, window.devicePixelRatio || 1);
+    canvas.style.height = `${height}px`;
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    resolveColors();
+    draw();
+  }
+
+  playButton.addEventListener(&quot;click&quot;, startPlayback);
+  timeInput.addEventListener(&quot;input&quot;, () =&gt; {
+    stopPlayback();
+    updateTime(Number(timeInput.value) / 1000, false);
+  });
+  seedInput.addEventListener(&quot;change&quot;, () =&gt; resetSimulation(false));
+  countInput.addEventListener(&quot;change&quot;, () =&gt; resetSimulation(false));
+
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(stage);
+  reducedMotion.addEventListener?.(&quot;change&quot;, () =&gt; {
+    if (reducedMotion.matches) stopPlayback();
+  });
+  colorScheme.addEventListener?.(&quot;change&quot;, () =&gt; {
+    resolveColors();
+    draw();
+  });
+
+  resolveColors();
+  resetSimulation(false);
+  resize();
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
